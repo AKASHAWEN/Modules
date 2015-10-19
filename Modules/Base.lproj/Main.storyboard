@@ -17,12 +17,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8WN-nc-AoD">
-                                <rect key="frame" x="188" y="28" width="225" height="30"/>
+                                <rect key="frame" x="20" y="20" width="49" height="40"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <state key="normal" title="Pop Up"/>
+                                <state key="normal" title="Pop"/>
                                 <connections>
                                     <action selector="PopUpBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xOR-CT-j4n"/>
+                                    <segue destination="iJq-jc-Q2l" kind="popoverPresentation" identifier="poptonew" popoverAnchorView="8WN-nc-AoD" id="VqK-fi-Fyq">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
                                 </connections>
                             </button>
                         </subviews>
@@ -33,6 +36,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="460" y="400"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="ldk-BJ-c84">
+            <objects>
+                <tableViewController id="iJq-jc-Q2l" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="hWJ-oG-qUT">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" red="0.61194944381713867" green="0.92325127124786377" blue="0.71058154106140137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="F6b-yh-KyI">
+                                <rect key="frame" x="0.0" y="28" width="100" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F6b-yh-KyI" id="m6s-UK-PBw">
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                    <color key="backgroundColor" red="0.61194944381713867" green="0.92325127124786377" blue="0.71058154106140137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="iJq-jc-Q2l" id="tYN-Mb-QuZ"/>
+                            <outlet property="delegate" destination="iJq-jc-Q2l" id="ZMU-U6-0x1"/>
+                        </connections>
+                    </tableView>
+                    <value key="contentSizeForViewInPopover" type="size" width="100" height="100"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="100" height="100"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IWw-Lc-gCs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1132" y="400"/>
         </scene>
     </scenes>
 </document>
