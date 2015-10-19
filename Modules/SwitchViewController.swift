@@ -10,9 +10,14 @@ import UIKit
 
 class SwitchViewController: UIViewController, UIPopoverPresentationControllerDelegate {
 
+    @IBAction func barBtn(sender: UIBarButtonItem) {
+        self.performSegueWithIdentifier("barto", sender: self)
+    }
     @IBAction func PopUpBtn(sender: UIButton) {
         self.performSegueWithIdentifier("poptonew", sender: self)
     }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -33,11 +38,28 @@ class SwitchViewController: UIViewController, UIPopoverPresentationControllerDel
             
             if controller != nil {
                 controller?.delegate = self
-                controller?.popoverLayoutMargins  = UIEdgeInsetsMake(200, 200, 0, 0)
+                
+                //controller?.sourceView = self.PopUpBtn
+                
+                controller?.sourceRect = CGRectMake(25, 25, 20, 20)
+                //controller?.popoverLayoutMargins  = UIEdgeInsetsMake(200, 200, 0, 0)
                 
             }
-            
         }
+//        } else if segue.identifier == "barto" {
+//            let vc = segue.destinationViewController
+//            let controller = vc.popoverPresentationController
+//            
+//            
+//            
+//            if controller != nil {
+//                controller?.delegate = self
+//                
+//                controller?.popoverLayoutMargins  = UIEdgeInsetsMake(200, 200, 0, 0)
+//                
+//            }
+//            
+//        }
     
     }
 
